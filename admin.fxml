@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.1360673546985334" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JAVAkeshe.admincontroler">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="474.0" prefWidth="68.0">
+         <children>
+            <VBox layoutX="-1.0" prefHeight="498.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="searchad" mnemonicParsing="false" onAction="#searchad" prefHeight="23.0" prefWidth="100.0" text="查看管理员信息" />
+                  <Button fx:id="searchst" mnemonicParsing="false" onAction="#searchst" prefHeight="23.0" prefWidth="98.0" text="查看学生信息" />
+                  <Button fx:id="change" mnemonicParsing="false" onAction="#changes" prefHeight="23.0" prefWidth="99.0" text="管理宿舍/床位" />
+                  <Button fx:id="repair" mnemonicParsing="false" onAction="#repairing" prefHeight="23.0" prefWidth="98.0" text="查看报修信息" />
+                  <Button fx:id="total" mnemonicParsing="false" onAction="#gettotal" prefHeight="23.0" prefWidth="101.0" text="统计数据" />
+               </children>
+            </VBox>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="518.0" prefWidth="634.0">
+         <children>
+            <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="管理员" wrappingWidth="73.04022216796875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Label layoutX="8.0" layoutY="31.0" prefHeight="15.0" prefWidth="152.0" text="ID：" />
+            <Label layoutX="167.0" layoutY="31.0" prefHeight="15.0" prefWidth="119.0" text="姓名：" />
+            <Label layoutX="288.0" layoutY="31.0" prefHeight="15.0" prefWidth="57.0" text="性别：" />
+            <Label layoutX="353.0" layoutY="31.0" prefHeight="15.0" prefWidth="100.0" text="管理楼号：" />
+            <Label layoutX="453.0" layoutY="31.0" prefHeight="15.0" prefWidth="152.0" text="电话：" />
+            <Label fx:id="id" layoutX="8.0" layoutY="86.0" prefHeight="15.0" prefWidth="152.0" text="ID：" visible="false" />
+            <TextField fx:id="gid" layoutX="27.0" layoutY="27.0" prefHeight="23.0" prefWidth="135.0" promptText="请输入ID" />
+            <TextField fx:id="gname" layoutX="200.0" layoutY="27.0" prefHeight="23.0" prefWidth="87.0" promptText="请输入姓名" />
+            <TextField fx:id="gsex" layoutX="317.0" layoutY="27.0" prefHeight="23.0" prefWidth="33.0" />
+            <TextField fx:id="gbuild" layoutX="409.0" layoutY="27.0" prefHeight="23.0" prefWidth="42.0" />
+            <TextField fx:id="gphone" layoutX="482.0" layoutY="27.0" prefHeight="23.0" prefWidth="100.0" />
+            <Pagination fx:id="adpagetable" layoutX="4.0" layoutY="451.0" prefHeight="41.0" prefWidth="576.0" visible="false" />
+            <TableView fx:id="adview" layoutX="49.0" layoutY="133.0" prefHeight="318.0" prefWidth="486.0" visible="false">
+              <columns>
+                <TableColumn fx:id="GID" prefWidth="119.99992370605469" text="编号" />
+                <TableColumn fx:id="GNAME" minWidth="9.5999755859375" prefWidth="91.2000732421875" text="姓名" />
+                  <TableColumn fx:id="GSEX" prefWidth="58.39996337890625" text="性别" />
+                  <TableColumn fx:id="GBUILD" minWidth="3.20001220703125" prefWidth="82.4000244140625" text="管理楼号" />
+                  <TableColumn fx:id="GPHONE" prefWidth="132.00002441406252" text="电话" />
+              </columns>
+            </TableView>
+            <Button fx:id="get" layoutX="585.0" layoutY="27.0" mnemonicParsing="false" onAction="#getinformation" text="确认" />
+            <Label fx:id="adlabel" layoutX="14.0" layoutY="58.0" text="查看管理员信息" visible="false" />
+            <TextField fx:id="cgid" layoutX="27.0" layoutY="82.0" prefHeight="23.0" prefWidth="135.0" promptText="请输入ID" visible="false" />
+            <Label fx:id="name" layoutX="168.0" layoutY="86.0" prefHeight="15.0" prefWidth="119.0" text="姓名：" visible="false" />
+            <TextField fx:id="cgname" layoutX="200.0" layoutY="82.0" prefHeight="23.0" prefWidth="87.0" promptText="请输入姓名" visible="false" />
+            <Label fx:id="sex" layoutX="288.0" layoutY="86.0" prefHeight="15.0" prefWidth="57.0" text="性别：" visible="false" />
+            <TextField fx:id="cgsex" layoutX="317.0" layoutY="82.0" prefHeight="23.0" prefWidth="33.0" visible="false" />
+            <Label fx:id="adbuild" layoutX="353.0" layoutY="86.0" prefHeight="15.0" prefWidth="72.0" text="管理楼号：" visible="false" />
+            <TableView fx:id="stview" layoutX="7.0" layoutY="162.0" prefHeight="290.0" prefWidth="625.0" visible="false">
+              <columns>
+                <TableColumn fx:id="STID" prefWidth="91.20001983642578" text="学号" />
+                <TableColumn fx:id="STNAME" prefWidth="60.0" text="姓名" />
+                  <TableColumn fx:id="STSEX" prefWidth="75.0" text="性别" />
+                  <TableColumn fx:id="STBUILD" prefWidth="75.0" text="楼号" />
+                  <TableColumn fx:id="STROOM" prefWidth="75.0" text="宿舍号" />
+                  <TableColumn fx:id="STBED" prefWidth="125.60000610351562" text="床位" />
+                  <TableColumn fx:id="STREPAIR" prefWidth="120.7999267578125" text="报修信息" />
+              </columns>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="edit" mnemonicParsing="false" onAction="#EDIT" text="编辑" />
+                        <MenuItem fx:id="delete" mnemonicParsing="false" onAction="#DELETE" text="删除" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+            <TextField fx:id="cgbuild" layoutX="409.0" layoutY="82.0" prefHeight="23.0" prefWidth="42.0" visible="false" />
+            <Label fx:id="adphone" layoutX="453.0" layoutY="86.0" prefHeight="15.0" prefWidth="152.0" text="电话：" visible="false" />
+            <TextField fx:id="cgphone" layoutX="489.0" layoutY="82.0" prefHeight="23.0" prefWidth="100.0" visible="false" />
+            <Button fx:id="check1" layoutX="585.0" layoutY="82.0" mnemonicParsing="false" onAction="#check" text="查看" visible="false" />
+            <Label fx:id="stlabel" layoutX="13.0" layoutY="58.0" text="查看学生信息" visible="false" />
+            <Label fx:id="stbuild" layoutX="353.0" layoutY="86.0" text="楼号：" visible="false" />
+            <Label fx:id="stroom" layoutX="453.0" layoutY="86.0" text="宿舍：" visible="false" />
+            <Label fx:id="stbad" layoutX="19.0" layoutY="123.0" text="床位：" visible="false" />
+            <TextField fx:id="cgbed" layoutX="57.0" layoutY="121.0" prefHeight="23.0" prefWidth="162.0" promptText="请输入床位号" visible="false" />
+            <Button fx:id="check2" layoutX="585.0" layoutY="82.0" mnemonicParsing="false" onAction="#checkst" text="查看" visible="false" />
+            <Button fx:id="reset" layoutX="585.0" layoutY="27.0" mnemonicParsing="false" onAction="#resetad" text="取消" visible="false" />
+            <Button fx:id="stchange" layoutX="585.0" layoutY="82.0" mnemonicParsing="false" onAction="#stchange" text="修改" visible="false" />
+            <Label fx:id="strepair" layoutX="226.0" layoutY="125.0" text="报修：" visible="false" />
+            <TextField fx:id="stmassage" disable="true" layoutX="265.0" layoutY="119.0" prefHeight="23.0" prefWidth="302.0" visible="false" />
+            <Button fx:id="finishre" layoutX="567.0" layoutY="121.0" mnemonicParsing="false" onAction="#finishrepair" prefHeight="23.0" prefWidth="65.0" text="完成报修" visible="false" />
+            <Label fx:id="totallabel" layoutX="22.0" layoutY="66.0" prefHeight="23.0" prefWidth="58.0" text="统计信息" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="totalmassage" editable="false" layoutX="1.0" layoutY="101.0" prefHeight="382.0" prefWidth="626.0" visible="false" />
+            <Button fx:id="addst" layoutX="585.0" layoutY="113.0" mnemonicParsing="false" onAction="#add" text="增加" visible="false" />
+            <Button fx:id="in" layoutX="173.0" layoutY="55.0" mnemonicParsing="false" onAction="#handin" text="导入文件" visible="false" />
+            <Button fx:id="out" layoutX="344.0" layoutY="55.0" mnemonicParsing="false" onAction="#handout" text="导出文件" visible="false" />
+            <Button fx:id="adchange" layoutX="585.0" layoutY="54.0" mnemonicParsing="false" onAction="#adchange" text="修改" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

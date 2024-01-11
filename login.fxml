@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="346.0" prefWidth="502.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JAVAkeshe.logincontroler">
+   <children>
+      <AnchorPane prefHeight="415.0" prefWidth="530.0">
+         <children>
+            <TextField fx:id="user" layoutX="169.0" layoutY="166.0" prefHeight="23.0" prefWidth="214.0" promptText="请输入六位数" />
+            <Label layoutX="118.0" layoutY="170.0" text="账户：" textFill="BLUE">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label layoutX="118.0" layoutY="212.0" text="密码：" textFill="BLUE">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Text layoutX="77.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="欢迎使用高校宿舍管理系统！" wrappingWidth="399.4402961730957">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="password" layoutX="169.0" layoutY="210.0" prefHeight="23.0" prefWidth="214.0" promptText="请输入密码" />
+            <Button fx:id="guan" layoutX="169.0" layoutY="290.0" mnemonicParsing="false" onAction="#guanli" text="管理端" />
+            <Button fx:id="st" layoutX="331.0" layoutY="290.0" mnemonicParsing="false" onAction="#student" text="学生端" />
+            <StackPane layoutX="397.0" layoutY="214.0" prefHeight="16.0" prefWidth="20.0" styleClass="svg-btn">
+               <children>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </StackPane>
+            <Label layoutX="118.0" layoutY="250.0" text="楼号：" textFill="BLUE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="build" layoutX="169.0" layoutY="248.0" prefHeight="23.0" prefWidth="214.0" promptText="请输入楼号" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
